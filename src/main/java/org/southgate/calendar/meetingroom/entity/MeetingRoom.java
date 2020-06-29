@@ -1,4 +1,4 @@
-package org.southgate.calendar.entity;
+package org.southgate.calendar.meetingroom.entity;
 
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;

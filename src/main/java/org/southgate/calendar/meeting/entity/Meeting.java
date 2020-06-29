@@ -1,4 +1,4 @@
-package org.southgate.calendar.entity;
+package org.southgate.calendar.meeting.entity;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -16,6 +16,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import org.southgate.calendar.meetingroom.entity.MeetingRoom;
+
 @Entity
 public class Meeting {
 
@@ -26,6 +28,7 @@ public class Meeting {
     private LocalDateTime start;
     private LocalDateTime end;
     private String name;
+    private String associatedUser;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumns({
@@ -90,6 +93,14 @@ public class Meeting {
 
     public void setParticipants(Set<Participant> participants) {
         this.participants = participants;
+    }
+
+    public String getAssociatedUser() {
+        return associatedUser;
+    }
+
+    public void setAssociatedUser(String associatedUser) {
+        this.associatedUser = associatedUser;
     }
 
     public void addParticipant(Participant participant) {

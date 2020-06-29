@@ -1,5 +1,8 @@
 package org.southgate.calendar.entity;
 
+import org.southgate.calendar.meeting.entity.Meeting;
+import org.southgate.calendar.meetingroom.entity.MeetingRoom;
+
 public class Calendar {
 
     private Iterable<MeetingRoom> meetingRooms;

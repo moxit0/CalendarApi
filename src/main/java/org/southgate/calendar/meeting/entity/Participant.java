@@ -1,4 +1,4 @@
-package org.southgate.calendar.entity;
+package org.southgate.calendar.meeting.entity;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -24,7 +24,6 @@ public class Participant {
         this.name = name;
     }
 
-    @Column(unique = true)
     private String name;
 
     @ManyToMany(mappedBy = "participants")
@@ -48,5 +47,14 @@ public class Participant {
 
     public void setMeetings(Set<Meeting> meetings) {
         this.meetings = meetings;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Participant{");
+        sb.append("id=").append(id);
+        sb.append(", name='").append(name).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 }
