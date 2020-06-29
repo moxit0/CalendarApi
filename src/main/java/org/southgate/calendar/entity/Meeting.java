@@ -1,6 +1,5 @@
 package org.southgate.calendar.entity;
 
-import java.awt.print.Book;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -12,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -27,7 +27,15 @@ public class Meeting {
     private LocalDateTime end;
     private String name;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumns({
+            @JoinColumn(
+                    name = "meeting_room_id",
+                    referencedColumnName = "meeting_room_id"),
+            @JoinColumn(
+                    name = "meeting_room_name",
+                    referencedColumnName = "meeting_room_name")
+    })
     private MeetingRoom meetingRoom;
 
     @ManyToMany(cascade = {

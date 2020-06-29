@@ -24,8 +24,8 @@ class MeetingRepositoryTest {
         m.setName("Begin");
         m.setStart(LocalDateTime.now());
         m.setEnd(LocalDateTime.now());
-        MeetingRoom mr = new MeetingRoom();
-        mr.setName("Kiten");
+        MeetingRoom mr = new MeetingRoom("Kiten");
+//        mr.setName("Kiten");
         m.setMeetingRoom(mr);
         Participant p = new Participant();
         p.setName("Pesho");
