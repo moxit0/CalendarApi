@@ -103,16 +103,6 @@ public class Meeting {
         this.associatedUser = associatedUser;
     }
 
-    public void addParticipant(Participant participant) {
-        this.participants.add(participant);
-        participant.getMeetings().add(this);
-    }
-
-    public void removeParticipant(Participant participant) {
-        this.participants.remove(participant);
-        participant.getMeetings().remove(this);
-    }
-
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Meeting{");

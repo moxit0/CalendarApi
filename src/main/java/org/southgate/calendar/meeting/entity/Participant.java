@@ -1,6 +1,7 @@
 package org.southgate.calendar.meeting.entity;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import javax.persistence.Column;
@@ -26,9 +27,6 @@ public class Participant {
 
     private String name;
 
-    @ManyToMany(mappedBy = "participants")
-    private Set<Meeting> meetings = new HashSet<>();
-
     public long getId() {
         return id;
     }
@@ -41,12 +39,19 @@ public class Participant {
         this.name = name;
     }
 
-    public Set<Meeting> getMeetings() {
-        return meetings;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (!(o instanceof Participant))
+            return false;
+        Participant that = (Participant) o;
+        return Objects.equals(name, that.name);
     }
 
-    public void setMeetings(Set<Meeting> meetings) {
-        this.meetings = meetings;
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 
     @Override
