@@ -2,7 +2,7 @@
 
 Demo project given on SouthGate technical interview based on Spring Boot.
 
-# Requirements
+## Requirements
 
 The goal of the application is to have a calendar to manage users meetings.
 
@@ -36,6 +36,12 @@ To build the project:
 To run jar file:
 
     java -jar target/calendar-0.0.1-SNAPSHOT.jar
+
+### Security
+There are two provided users that can be used for login: 
+
+        userName: user / pass: user
+        userName: admin / pass: admin
 
 ### Rest endpoints
 

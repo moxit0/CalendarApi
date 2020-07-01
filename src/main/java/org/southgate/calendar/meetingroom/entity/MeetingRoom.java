@@ -18,11 +18,6 @@ public class MeetingRoom {
         this.id = new MeetingRoomId(name);
     }
 
-    //    private String name;
-
-    //    @OneToMany(mappedBy = "meetingRoom")
-    //    private List<Meeting> meetings = new ArrayList<>();
-
     public MeetingRoomId getId() {
         return id;
     }
@@ -40,13 +35,5 @@ public class MeetingRoom {
     @Override
     public int hashCode() {
         return Objects.hash(id);
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("MeetingRoom{");
-        sb.append("id=").append(id);
-        sb.append('}');
-        return sb.toString();
     }
 }

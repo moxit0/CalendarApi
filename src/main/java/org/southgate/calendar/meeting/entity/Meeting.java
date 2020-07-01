@@ -102,17 +102,4 @@ public class Meeting {
     public void setAssociatedUser(String associatedUser) {
         this.associatedUser = associatedUser;
     }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Meeting{");
-        sb.append("id=").append(id);
-        sb.append(", start=").append(start);
-        sb.append(", end=").append(end);
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", meetingRoom=").append(meetingRoom);
-        sb.append(", participants=").append(participants);
-        sb.append('}');
-        return sb.toString();
-    }
 }
